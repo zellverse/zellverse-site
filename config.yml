@@ -1,0 +1,66 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - file: "content/hero.md"
+        label: "Hero Section"
+        name: "hero"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Subheadline", name: "subheadline", widget: "string" }
+          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+
+      - file: "content/services.md"
+        label: "Services"
+        name: "services"
+        fields:
+          - { label: "Services List", name: "services", widget: "list", fields: [
+              {label: "Service Name", name: "name", widget: "string"},
+              {label: "Description", name: "description", widget: "text"}
+            ]
+          }
+
+      - file: "content/bundles.md"
+        label: "Bundles"
+        name: "bundles"
+        fields:
+          - { label: "Bundles List", name: "bundles", widget: "list", fields: [
+              {label: "Bundle Name", name: "name", widget: "string"},
+              {label: "Description", name: "description", widget: "text"}
+            ]
+          }
+
+      - file: "content/courses.md"
+        label: "Courses"
+        name: "courses"
+        fields:
+          - { label: "Courses List", name: "courses", widget: "list", fields: [
+              {label: "Course Title", name: "title", widget: "string"},
+              {label: "Format", name: "format", widget: "select", options: ["Live", "Recorded"]},
+              {label: "Description", name: "description", widget: "text"}
+            ]
+          }
+
+      - file: "content/testimonials.md"
+        label: "Testimonials"
+        name: "testimonials"
+        fields:
+          - { label: "Testimonials", name: "testimonials", widget: "list", fields: [
+              {label: "Client Name", name: "client", widget: "string"},
+              {label: "Feedback", name: "feedback", widget: "text"}
+            ]
+          }
+
+      - file: "content/footer.md"
+        label: "Footer Text"
+        name: "footer"
+        fields:
+          - { label: "Footer Description", name: "description", widget: "text" }
